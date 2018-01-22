@@ -254,7 +254,7 @@ func (p *PostgresKeeper) createPGParameters(db *cluster.DB) common.Parameters {
 		parameters[k] = v
 	}
 
-	parameters["listen_addresses"] = fmt.Sprintf("127.0.0.1")
+	parameters["listen_addresses"] = fmt.Sprintf("*")
 
 	parameters["port"] = p.pgPort
 	// TODO(sgotti) max_replication_slots needs to be at least the
